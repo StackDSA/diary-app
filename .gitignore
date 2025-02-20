@@ -47,5 +47,6 @@ Thumbs.db
 .editorconfig
 package-lock.json
 .angular
+Backend/node_modules
 
-
+.vercel
