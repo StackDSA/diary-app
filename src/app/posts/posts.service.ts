@@ -16,7 +16,7 @@ export class PostsService {
   getPosts(postsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
     this.http
-      .get<{message: string, posts: any, maxPosts: number}>('http://localhost:3000/api/posts' + queryParams)
+      .get<{message: string, posts: any, maxPosts: number}>('https://diary-c3xndouww-stackdsas-projects.vercel.app/api/posts' + queryParams)
       .pipe(
         map((postData) => {
           return {
@@ -46,7 +46,7 @@ export class PostsService {
   }
 
   getPost(id: string) {
-    return this.http.get<{_id: string, title: string, content: string, imagePath: string}>('http://localhost:3000/api/posts/' + id);
+    return this.http.get<{_id: string, title: string, content: string, imagePath: string}>('https://diary-c3xndouww-stackdsas-projects.vercel.app/api/posts/' + id);
   }
 
   addPost(title: string, content: string, image: File) {
@@ -56,7 +56,7 @@ export class PostsService {
     postData.append('image', image, title);
 
     this.http.post<{message: string, post: Post}>(
-      'http://localhost:3000/api/posts',
+      'https://diary-c3xndouww-stackdsas-projects.vercel.app/api/posts',
       postData
       )
       .subscribe((responseData) => {
@@ -81,7 +81,7 @@ export class PostsService {
       };
     }
     this.http
-      .put('http://localhost:3000/api/posts/' + id, postData)
+      .put('https://diary-c3xndouww-stackdsas-projects.vercel.app/api/posts/' + id, postData)
       .subscribe(response => {
         this.router.navigate(['/']);
       });
@@ -89,6 +89,6 @@ export class PostsService {
 
   deletePost(postId: string) {
     return this.http.
-      delete('http://localhost:3000/api/posts/' + postId);
+      delete('https://diary-c3xndouww-stackdsas-projects.vercel.app/api/posts/' + postId);
   }
 }
