@@ -42,7 +42,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# filepath: /c:/Users/ishan/Ishan-Office and Personal/WebDev/MEAN-practice/mean-course/.gitignore
+# User-specific files
 .env
 .editorconfig
 package-lock.json

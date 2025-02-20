@@ -1,4 +1,3 @@
-// filepath: /c:/Users/ishan/Ishan-Office and Personal/WebDev/MEAN-practice/mean-course/backend/app.js
 const path = require('path');
 const express = require('express');
 const mongoose = require('mongoose');
